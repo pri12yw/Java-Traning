@@ -1,4 +1,10 @@
 package lti.bank;
+
+/***
+ * this class represents generalised bank account.
+ * @author AE206_PC9
+ * @version 1.0
+ */
 public abstract class Account implements Bank {
 	private int actNo;
 	private String holder;
