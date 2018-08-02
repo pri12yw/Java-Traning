@@ -1,4 +1,4 @@
-
+package lti.org;
 public class Manager extends Employee {
 
 	private double commission;

@@ -1,4 +1,4 @@
-
+package lti.org;
 public class Executive extends Employee {
 	private double bonus;
 

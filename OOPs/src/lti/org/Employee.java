@@ -1,3 +1,4 @@
+package lti.org;
 
 public abstract class Employee {
 	private int empNo;

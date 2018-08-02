@@ -1,5 +1,5 @@
 
-public class Person {
+public class Person implements Cloneable {
 	private String name;
 	private int age;
 
@@ -40,13 +40,11 @@ public class Person {
 	protected void finalize() throws Throwable {
 		System.out.println("dead");
 	}
-
-	public static void main(String[] args) {
+	public static void main(String[] args) throws CloneNotSupportedException {
 		
 
-		Person p = null;
-		for(int c=1;c<=5;c++)
-			p = new Person();
-		System.gc();
+		Person p1 = new Person("Pool",21);
+		Person pc = (Person) p1.clone();
+		System.out.println(pc);
 	}
 }
