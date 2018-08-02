@@ -23,9 +23,15 @@ public abstract class Account implements Bank {
 		this.holder = holder;
 		this.balance = balance;
 		// instantiating transaction array for account
-		txns = new Transaction[10];
-		// adding opening account transaction
-		txns[idx++] = new Transaction("OB", balance, balance);
+		if (this instanceof Savings) {
+			txns = new Transaction[10];
+			// adding opening account transaction
+			txns[idx++] = new Transaction("OB", balance, balance);
+		}
+		else {
+			txns = new CurrentTransaction[10];
+			txns[idx++] = new CurrentTransaction("OB", balance, balance,OVERDRAFT_AMT);
+		}
 	}
 
 	public void summary() {

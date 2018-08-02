@@ -19,6 +19,7 @@ public class Current extends Account {
 			balance += overdraft - OVERDRAFT_AMT;
 			overdraft = OVERDRAFT_AMT;
 		}
+		txns[idx++] = new CurrentTransaction("Cr", amount, balance,overdraft);
 	}
 
 	@Override
@@ -28,6 +29,7 @@ public class Current extends Account {
 			if (balance < MIN_CUR_BAL) {
 				overdraft += balance;
 				balance =MIN_CUR_BAL;
+				txns[idx ++] = new CurrentTransaction("Db",amount,balance,overdraft);
 			}
 		} else {
 			System.out.println("Insufficient funds");

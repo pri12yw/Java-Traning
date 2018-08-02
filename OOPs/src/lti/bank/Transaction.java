@@ -1,8 +1,9 @@
 package lti.bank;
 
 public class Transaction {
-	private String type;
-	private double amount, balance;
+	public String type;
+	protected double amount;
+	protected double balance;
 
 	public Transaction() {
 	}
